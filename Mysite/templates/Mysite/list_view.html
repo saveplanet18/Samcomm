@@ -1,0 +1,19 @@
+{% extends 'Mysite/base.html' %}
+
+<div class="main">
+    {% csrf_token %}
+
+    <!-- form as paragraph -->
+    {{ form.as_p }}
+    {%  for data in dataset %}
+        {{ data.empname }}
+        {{ data.empcode }}
+        {{ data.empid }}
+        {{ data.dept }}
+        {{ data.gender }}
+        {{ data.hobbis }}
+        <a href ="{% url context %}">
+            <img src= "{{ MEDIA_URL.image.url }}" style="cursor:pointer">
+        </a>
+    {% endfor %}
+</div>
